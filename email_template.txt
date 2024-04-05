@@ -1,0 +1,16 @@
+Hi {first_name},
+
+I hope you're doing well. My name is Aastha Shukla, and I came across the Software Development Engineer (SDE) position at {company_name}. With graduation around the corner in May 2024 and a solid background in computer science, I'm genuinely enthusiastic about the possibility of joining your team.
+
+I've attached my resume for your review, so you can see firsthand the experiences and skills I bring to the table. From my time as a Senior Software Engineer at Cimpress Technology, where I spearheaded cost-saving initiatives and collaborated with cross-functional teams, to my role as a Full Stack Developer at House of Web3, where I drove traffic and engagement through innovative API solutions, I've consistently aimed to deliver impactful results.
+
+{company_name} stands out to me because of its reputation for innovation and its commitment to pushing the boundaries of technology. I'm eager to contribute to your team's success by leveraging my diverse skill set and passion for problem-solving.
+
+Thank you for considering my application, {first_name}. I'd love the opportunity to chat further about how my background aligns with the needs of your team. Please let me know if there's a convenient time for you to connect.
+
+Looking forward to hearing from you soon.
+
+Warm regards,
+
+Aastha Shukla
+(LinkedIn: https://www.linkedin.com/in/aastha-shukla/)
