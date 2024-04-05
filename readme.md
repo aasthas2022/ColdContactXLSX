@@ -16,6 +16,7 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 
 - **Increased Productivity**: With the time saved from manual email sending, I can now allocate more time to other aspects of my job search, such as networking, skill development, and preparing for interviews. This increased productivity has helped me make significant progress in my job search journey.
 
+
 ## Features
 
 - **Email Address Generation**: The project automatically generates potential email addresses for recruiters based on common patterns, saving you the hassle of manually guessing email addresses.
