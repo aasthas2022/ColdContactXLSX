@@ -1,0 +1,13 @@
+<html>
+<body>
+<p>Hi {first_name},</p>
+    <p>I hope you're doing well. My name is Aastha Shukla, and I came across the <strong>Software Development Engineer (SDE)</strong> position at <strong>{company_name}</strong>. With graduation around the corner in <strong>May 2024</strong> and a solid background in <strong>computer science</strong>, I'm genuinely enthusiastic about the possibility of joining your team.</p>
+    <p>I've attached my resume for your review, so you can see firsthand the experiences and skills I bring to the table. From my time as a <strong>Senior Software Engineer</strong> at <strong>Cimpress Technology</strong>, where I spearheaded <strong>cost-saving initiatives</strong> and collaborated with <strong>cross-functional teams</strong>, to my role as a <strong>Full Stack Developer</strong> at <strong>House of Web3</strong>, where I drove <strong>traffic</strong> and <strong>engagement</strong> through innovative <strong>API solutions</strong>, I've consistently aimed to deliver impactful results.</p>
+    <p><strong>{company_name}</strong> stands out to me because of its reputation for <strong>innovation</strong> and its commitment to pushing the boundaries of <strong>technology</strong>. I'm eager to contribute to your team's success by leveraging my diverse skill set and passion for <strong>problem-solving</strong>.</p>
+    <p>Thank you for considering my application, <strong>{first_name}</strong>. I'd love the opportunity to chat further about how my background aligns with the needs of your team. Please let me know if there's a convenient time for you to connect.</p>
+    <p>Looking forward to hearing from you soon.</p>
+    <p>Warm regards,</p>
+    <p>Aastha Shukla<br>(LinkedIn: <a href="https://www.linkedin.com/in/aastha-shukla/">Aastha Shukla</a>)</p>
+
+</body>
+</html>
