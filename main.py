@@ -48,12 +48,12 @@ def main():
             for recipient_email in recipient_emails:
                 subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}" # customize as per your name
                 message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_email, company_name=company_name)
-                send_email(sender_email, sender_password, recipient_email, subject, message)
+                send_email(sender_email, sender_password, recipient_email, subject, message, company_name)
                 logger.info(f"Email sent successfully to {recipient_email}")
         elif recipient_emails:
             subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}" # customize as per your name
             message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_emails, company_name=company_name)
-            send_email(sender_email, sender_password, recipient_emails, subject, message)
+            send_email(sender_email, sender_password, recipient_emails, subject, message, company_name)
             logger.info(f"Email sent successfully to {recipient_emails}")
 
 if __name__ == "__main__":

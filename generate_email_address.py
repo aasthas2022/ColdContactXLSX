@@ -14,8 +14,9 @@ def generate_email_address(first_name, last_name, email, company_name):
         email2 = f"{first_name.lower()}.{last_name.lower()[0]}@{company_name.lower()}.com"
         email3 = f"{first_name.lower()}_{last_name.lower()}@{company_name.lower()}.com"
         email4 = f"{first_name.lower()}{last_name.lower()}@{company_name.lower()}.com"
-        logger.info(f"Generated email addresses: '{email1}', '{email2}', '{email3}', '{email4}'.")
-        return email1, email2, email3, email4
+        email5 = f"{first_name.lower()}.{last_name.lower()}@{company_name.lower()}.com"
+        logger.info(f"Generated email addresses: '{email1}', '{email2}', '{email3}', '{email4}', '{email5}'.")
+        return email1, email2, email3, email4, email5
     elif first_name:
         email = f"{first_name.lower()}@{company_name.lower()}.com"
         logger.info(f"Generated email address: '{email}'.")

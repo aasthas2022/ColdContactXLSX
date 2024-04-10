@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 # Set up logging
 logger = logging.getLogger(__name__)
 
-def send_email(sender_email, sender_password, recipient_email, subject, message):
+def send_email(sender_email, sender_password, recipient_email, subject, message, company_name):
     logger.info(f"Sending email to: {recipient_email}")
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -31,6 +31,11 @@ def send_email(sender_email, sender_password, recipient_email, subject, message)
         
         server.sendmail(sender_email, recipient_email, msg.as_string())
         logger.info(f"Email sent successfully to {recipient_email}")
+
+        # Log successfully sent email address to a text file
+        success_log_file = f"{company_name}_successfully_sent_emails.txt"
+        with open(success_log_file, 'a') as file:
+            file.write(recipient_email + '\n')
 
         server.quit()
     except Exception as e:
