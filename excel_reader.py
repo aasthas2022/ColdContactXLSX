@@ -12,9 +12,9 @@ def read_data_from_excel(file_path, sheet_name):
         workbook = openpyxl.load_workbook(file_path)
         sheet = workbook[sheet_name]
         for row in sheet.iter_rows(values_only=True):
-            first_name, last_name, email, company_name = row
-            data.append((first_name, last_name, email, company_name))
-        logger.info(f"Read {len(data)} rows of data from Excel file.")
+            first_name, last_name, email, company_name, *designation = row
+            data.append((first_name, last_name, email, company_name, designation[0] if designation else None))
     except Exception as e:
         logger.error("Error reading Excel file:", exc_info=True)
+    logger.info(f"Read {len(data)} rows of data from Excel file.")
     return data
