@@ -29,27 +29,31 @@ def read_excel_data():
     logger.info(f"Reading data from Excel file: '{excel_file}', sheet: '{sheet_name}'")
     return read_data_from_excel(excel_file, sheet_name)
 
-def send_emails_now():
+def send_emails_now(batch_size=10):
     sender_email, sender_password = load_email_settings()
     email_template = read_email_template()
     data = read_excel_data()
 
-    for row in data:
-        first_name, last_name, email, company_name, designation = row
-        recipient_emails = generate_email_address(first_name, last_name, email, company_name)
-        if isinstance(recipient_emails, tuple):
-            for recipient_email in recipient_emails:
+    # Split the data into batches
+    for i in range(0, len(data), batch_size):
+        batch = data[i:i + batch_size]
+
+        for row in batch:
+            first_name, last_name, email, company_name, designation = row
+            recipient_emails = generate_email_address(first_name, last_name, email, company_name)
+            if isinstance(recipient_emails, tuple):
+                for recipient_email in recipient_emails:
+                    subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}"
+                    message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_email,
+                                                     company_name=company_name, designation=designation if designation else "esteemed employee")
+                    send_email(sender_email, sender_password, recipient_email, subject, message, company_name)
+                    logger.info(f"Email sent successfully to {recipient_email}")
+            elif recipient_emails:
                 subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}"
-                message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_email,
+                message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_emails,
                                                  company_name=company_name, designation=designation if designation else "esteemed employee")
-                send_email(sender_email, sender_password, recipient_email, subject, message, company_name)
-                logger.info(f"Email sent successfully to {recipient_email}")
-        elif recipient_emails:
-            subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}"
-            message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_emails,
-                                             company_name=company_name, designation=designation if designation else "esteemed employee")
-            send_email(sender_email, sender_password, recipient_emails, subject, message, company_name)
-            logger.info(f"Email sent successfully to {recipient_emails}")
+                send_email(sender_email, sender_password, recipient_emails, subject, message, company_name)
+                logger.info(f"Email sent successfully to {recipient_emails}")
 
 def schedule_emails():
     specific_time = input("Enter the specific time to schedule the email (HH:MM): ")
@@ -62,7 +66,7 @@ def schedule_emails():
     except ValueError:
         print("Invalid time format. Please enter the time in HH:MM format.")
 
-def send_emails_at_specific_time(hour, minute):
+def send_emails_at_specific_time(hour, minute, batch_size=10):
     sender_email, sender_password = load_email_settings()
     email_template = read_email_template()
     data = read_excel_data()
@@ -76,19 +80,23 @@ def send_emails_at_specific_time(hour, minute):
     logger.info(f"Waiting until {scheduled_time.strftime('%H:%M')} to send emails.")
     time.sleep(delay)
 
-    for row in data:
-        first_name, last_name, email, company_name, designation = row
-        recipient_emails = generate_email_address(first_name, last_name, email, company_name)
-        if isinstance(recipient_emails, tuple):
-            for recipient_email in recipient_emails:
+    # Split the data into batches
+    for i in range(0, len(data), batch_size):
+        batch = data[i:i + batch_size]
+
+        for row in batch:
+            first_name, last_name, email, company_name, designation = row
+            recipient_emails = generate_email_address(first_name, last_name, email, company_name)
+            if isinstance(recipient_emails, tuple):
+                for recipient_email in recipient_emails:
+                    subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}"
+                    message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_email,
+                                                     company_name=company_name, designation=designation if designation else "esteemed employee")
+                    send_email(sender_email, sender_password, recipient_email, subject, message, company_name)
+                    logger.info(f"Email sent successfully to {recipient_email}")
+            elif recipient_emails:
                 subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}"
-                message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_email,
+                message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_emails,
                                                  company_name=company_name, designation=designation if designation else "esteemed employee")
-                send_email(sender_email, sender_password, recipient_email, subject, message, company_name)
-                logger.info(f"Email sent successfully to {recipient_email}")
-        elif recipient_emails:
-            subject = f"[Aastha Shukla]: Exploring Full-Time SDE Roles at {company_name}"
-            message = email_template.format(first_name=first_name, last_name=last_name, email=recipient_emails,
-                                             company_name=company_name, designation=designation if designation else "esteemed employee")
-            send_email(sender_email, sender_password, recipient_emails, subject, message, company_name)
-            logger.info(f"Email sent successfully to {recipient_emails}")
+                send_email(sender_email, sender_password, recipient_emails, subject, message, company_name)
+                logger.info(f"Email sent successfully to {recipient_emails}")
