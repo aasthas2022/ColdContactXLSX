@@ -29,6 +29,8 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 
 - **Scheduled Email Delivery**: Schedule email delivery for a specific time, allowing you to reach recipients at the most convenient time for them.
 
+- **Batch Processing**: Emails are sent in batches, allowing for smoother processing and reducing the risk of errors or timeouts when sending a large number of emails.
+
 ## Usage
 
 ### Step 1: Prepare Data
