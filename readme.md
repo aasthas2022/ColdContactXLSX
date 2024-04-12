@@ -21,11 +21,13 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 
 - **Email Address Generation**: The project automatically generates potential email addresses for recruiters based on common patterns, saving you the hassle of manually guessing email addresses.
 
-- **Personalized Cold Emails**: You can send personalized cold emails to recruiters using a predefined email template. The emails contain relevant information, such as your name, target company, and a customized message.
+- **Personalized Cold Emails**: You can send personalized cold emails to recruiters using a predefined email template. The emails contain relevant information, such as your name, target company, designation and a customized message.
 
 - **Attachment Support**: The project supports attaching files, such as resumes, to the cold emails, allowing you to provide additional information to recruiters.
 
 - **Bulk Email Sending:** The project supports sending bulk emails to multiple recruiters simultaneously, allowing you to reach out to a large number of potential employers with minimal effort.
+
+- **Scheduled Email Delivery**: Schedule email delivery for a specific time, allowing you to reach recipients at the most convenient time for them.
 
 ## Usage
 
@@ -35,7 +37,7 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 
 2. **LinkedIn Search**: Visit LinkedIn (www.linkedin.com) and search for the recruiters or employees by company name. Often, you can find their profiles with their first and last names listed.
 
-3. **Record Information**: Record the first name and last name of the recruiters or employees found on LinkedIn in your Excel spreadsheet. This will ensure that you have accurate data to use in the email generation process. In the spreadsheet, create columns for "First Name," "Last Name," "Email," and "Company Name." Enter the relevant information for each recruiter or employee in the respective rows. If the recruiter or employee's email address is available, enter it in the "Email" column. If not, leave the "Email" column blank.
+3. **Record Information**: Record the first name and last name of the recruiters or employees found on LinkedIn in your Excel spreadsheet. This will ensure that you have accurate data to use in the email generation process. In the spreadsheet, create columns for "First Name," "Last Name," "Email,", "Company Name" and "Desingation" Enter the relevant information for each recruiter or employee in the respective rows. If the recruiter or employee's email address is available, enter it in the "Email" column. If not, leave the "Email" column blank.
 
 ### Step 2: Update Resume File Name
 
@@ -65,7 +67,7 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
    - If you want to send plain text emails, leave the formatting as is.
    - If you want to format your emails (e.g., bold, italics), uncomment the relevant lines in the template file and customize the formatting as desired.
 
-### Step 5: Run the Script
+### Step 5: Run the Script (send email now)
 
 1. **Execute the Script**: Open a terminal or command prompt on your computer and navigate to the project directory.
 
@@ -74,6 +76,22 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 3. **Monitor Progress**: The script will start processing the data from the Excel spreadsheet, generating emails, and sending them to the recruiters or employees. You'll see progress messages in the terminal/command prompt indicating the status of each email being sent.
 
 4. **Verify Sent Emails**: Once the script has finished running, check your email inbox to verify that the emails have been sent successfully.
+
+### Step 6: Schedule Email Delivery
+
+Note: I am aware that this is not ideal but ensure that the script remains running to execute scheduled tasks at the specified times without interruption.
+
+1. **Execute the Script in Schedule Mode**: Open a terminal or command prompt on your computer and navigate to the project directory.
+
+2. **Run the Script in Schedule Mode**: Enter the command `python main.py` and press Enter to execute the script.
+
+3. **Choose Scheduled Delivery Option**: When prompted, type `schedule` to schedule the email for a specific time.
+
+4. **Enter Scheduled Time**: Enter the specific time (in 24-hour format HH:MM) at which you want the emails to be sent.
+
+5. **Monitor Progress**: The script will schedule the emails for delivery at the specified time. You'll see a confirmation message indicating that the emails have been scheduled.
+
+6. **Verify Scheduled Emails**: You can verify the scheduled emails by checking the logs or by ensuring that the emails are sent at the specified time.
 
 ### Additional Tips
 
