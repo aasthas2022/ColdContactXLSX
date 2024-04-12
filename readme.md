@@ -31,6 +31,9 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 
 - **Batch Processing**: Emails are sent in batches, allowing for smoother processing and reducing the risk of errors or timeouts when sending a large number of emails.
 
+- **Retry Logic**: In case of any errors encountered during email sending, the project includes a retry mechanism. It will attempt to resend the email for a maximum of 3 times before logging an error message if it fails.
+
+
 ## Usage
 
 ### Step 1: Prepare Data

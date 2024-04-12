@@ -1,8 +1,10 @@
 # email_sender.py
+
 import os
 import logging
-from email.mime.application import MIMEApplication
 import smtplib
+import time
+from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -42,3 +44,4 @@ def send_email(sender_email, sender_password, recipient_email, subject, message,
         server.quit()
     except Exception as e:
         logger.error("Error sending email:", exc_info=True)
+        raise e
