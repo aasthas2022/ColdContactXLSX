@@ -4,7 +4,7 @@ import logging
 import time
 from data_utils.generate_email_address import generate_email_address
 from email_utils.email_sender import send_email
-from scheduler.email_scheduler import load_email_settings, read_email_template, read_excel_data
+from email_utils.email_manager import load_email_settings, read_email_template, read_excel_data
 
 logger = logging.getLogger(__name__)
 MAX_RETRIES = 3
