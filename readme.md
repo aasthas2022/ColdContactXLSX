@@ -33,6 +33,8 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 
 - **Retry Logic**: In case of any errors encountered during email sending, the project includes a retry mechanism. It will attempt to resend the email for a maximum of 3 times before logging an error message if it fails.
 
+- **Follow-Up Emails**: Send follow-up emails to recruiters who have not responded to your initial email, increasing your chances of getting a response.
+
 
 ## Usage
 
@@ -76,11 +78,13 @@ As a job seeker, I used to spend over 3 hours every day sending cold emails to r
 
 1. **Execute the Script**: Open a terminal or command prompt on your computer and navigate to the project directory.
 
-2. **Run the Script**: Enter the command `python main.py` and press Enter to execute the script.
+2. **Run the Script**: Enter the command `python main.py` and press Enter to execute the script. Type in `first` and then `now` when prompted.
 
 3. **Monitor Progress**: The script will start processing the data from the Excel spreadsheet, generating emails, and sending them to the recruiters or employees. You'll see progress messages in the terminal/command prompt indicating the status of each email being sent.
 
 4. **Verify Sent Emails**: Once the script has finished running, check your email inbox to verify that the emails have been sent successfully.
+
+   ![Email Now](./output_img/email_sent_now.png)
 
 ### Step 6: Schedule Email Delivery
 
@@ -88,7 +92,7 @@ Note: I am aware that this is not ideal but ensure that the script remains runni
 
 1. **Execute the Script in Schedule Mode**: Open a terminal or command prompt on your computer and navigate to the project directory.
 
-2. **Run the Script in Schedule Mode**: Enter the command `python main.py` and press Enter to execute the script.
+2. **Run the Script in Schedule Mode**: Enter the command `python main.py` and press Enter to execute the script. Type in `first` and then `schedule` when prompted.
 
 3. **Choose Scheduled Delivery Option**: When prompted, type `schedule` to schedule the email for a specific time.
 
@@ -97,6 +101,16 @@ Note: I am aware that this is not ideal but ensure that the script remains runni
 5. **Monitor Progress**: The script will schedule the emails for delivery at the specified time. You'll see a confirmation message indicating that the emails have been scheduled.
 
 6. **Verify Scheduled Emails**: You can verify the scheduled emails by checking the logs or by ensuring that the emails are sent at the specified time.
+
+   ![Email Later](./output_img/email_sent_later.png)
+
+### Step 7: Send Follow-Up Emails
+
+1. **Execute the Script (send follow-up email)**: Open a terminal or command prompt on your computer and navigate to the project directory.
+
+2. **Run the Script (send follow-up email)**: Enter the command `python main.py` and press Enter to execute the script. When prompted type in `follow-up`
+
+3. **Monitor Progress**: The script will start processing the data from the Excel spreadsheet, generating follow-up emails, and sending them to the recruiters or employees who have not responded to your initial email. You'll see progress messages in the terminal/command prompt indicating the status of each follow-up email being sent.
 
 ### Additional Tips
 
