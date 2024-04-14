@@ -1,7 +1,12 @@
 # main.py
+"""
+Entry point of ColdContactXLSX.
+"""
 
 import logging
-from email_scheduler import send_emails_now, schedule_emails
+
+from scheduler.schedule_now import send_emails_now
+from scheduler.send_emails_at_specific_time import schedule_emails
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

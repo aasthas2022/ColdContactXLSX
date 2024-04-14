@@ -1,4 +1,7 @@
-# email_sender.py
+# email_utils/email_sender.py
+"""
+Module to handle sending emails.
+"""
 
 import os
 import logging
@@ -8,10 +11,24 @@ from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+resume_filename = "AasthaShukla_SDE_Resume.pdf"  # Update as necessary
+resume_path = os.path.join("email_assets", resume_filename)
+
 # Set up logging
 logger = logging.getLogger(__name__)
 
 def send_email(sender_email, sender_password, recipient_email, subject, message, company_name):
+    """
+    Sends an email with an attachment.
+    
+    Args:
+        sender_email (str): Sender's email address.
+        sender_password (str): Sender's email password.
+        recipient_email (str): Recipient's email address.
+        subject (str): Email subject.
+        message (str): Email body message.
+        company_name (str): Name of the company.
+    """
     logger.info(f"Sending email to: {recipient_email}")
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -25,9 +42,6 @@ def send_email(sender_email, sender_password, recipient_email, subject, message,
         msg.attach(MIMEText(message, 'plain'))
         # msg.attach(MIMEText(message, 'html')) - uncomment if you want your message to be formatted
         
-        # Attach resume file from the root folder
-        resume_filename = "AasthaShukla_SDE_Resume.pdf"  # Update as necessary
-        resume_path = os.path.join("email_assets", resume_filename)
         with open(resume_path, 'rb') as file:
             resume_attachment = MIMEApplication(file.read(), Name=resume_filename)
         resume_attachment['Content-Disposition'] = f'attachment; filename="{resume_filename}"'

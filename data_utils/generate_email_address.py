@@ -1,10 +1,26 @@
-# generate_email_address.py
+# data_utils/generate_email_address.py
+"""
+Module to generate email addresses based on provided data.
+"""
+
 import logging
 
 # Set up logging
 logger = logging.getLogger(__name__)
 
 def generate_email_address(first_name, last_name, email, company_name):
+    """
+    Generates email addresses based on provided data.
+
+    Args:
+        first_name (str): First name of the recipient.
+        last_name (str): Last name of the recipient.
+        email (str): Email address of the recipient.
+        company_name (str): Name of the company.
+
+    Returns:
+        str or tuple: Generated email address(es).
+    """
     logger.info("Generating email addresses...")
     if email:
         logger.info("Using provided email address.")

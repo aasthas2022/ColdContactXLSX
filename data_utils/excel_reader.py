@@ -1,4 +1,8 @@
-# excel_reader.py
+# data_utils/excel_reader.py
+"""
+Module to read data from an Excel file.
+"""
+
 import logging
 import openpyxl
 
@@ -6,6 +10,16 @@ import openpyxl
 logger = logging.getLogger(__name__)
 
 def read_data_from_excel(file_path, sheet_name):
+    """
+    Reads data from an Excel file.
+
+    Args:
+        file_path (str): Path to the Excel file.
+        sheet_name (str): Name of the sheet to read data from.
+
+    Returns:
+        list: List of tuples containing data read from the Excel file.
+    """
     logger.info(f"Reading data from Excel file: '{file_path}', sheet: '{sheet_name}'")
     data = []
     try:
