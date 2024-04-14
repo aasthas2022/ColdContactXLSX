@@ -1,9 +1,13 @@
 # scheduler/email_scheduler.py
 
+"""
+Module for managing email-related operations such as loading email settings, reading email templates,
+and reading data from Excel files.
+"""
+
 import logging
 import os
 from dotenv import load_dotenv
-from email_utils.email_sender import send_email
 from data_utils.excel_reader import read_data_from_excel
 from data_utils.generate_email_address import generate_email_address
 
@@ -31,6 +35,18 @@ def read_email_template():
         email_template = file.read()
     logger.info("Read email template.")
     return email_template
+
+def read_follow_up_template():
+    """
+    Reads the follow-up email template from a file.
+
+    Returns:
+        str: Follow-up email template.
+    """
+    with open('email_assets/follow_up_template.txt', 'r') as file:
+        follow_up_template = file.read()
+    logger.info("Read follow-up email template.")
+    return follow_up_template
 
 def read_excel_data():
     """
